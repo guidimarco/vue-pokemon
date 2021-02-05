@@ -5,11 +5,14 @@
                 <div class="col-12">
                     <h1>{{ title }}</h1>
                     <p>{{ msg }}</p>
-                    <ul>
-                        <li v-for="(pokemon, index) in pokemons" :key="index">
-                            {{ pokemon.name }}
-                        </li>
-                    </ul>
+
+                    <!-- form input -> search pokemon -->
+                    <Form />
+
+                    <!-- card all pokemons -->
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <Card v-for="(pokemon, index) in pokemons" :key="index" :name="pokemon.name" :url="pokemon.url" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -17,8 +20,15 @@
 </template>
 
 <script>
+    import Card from "./../components/Card.vue";
+    import Form from "./../components/Form.vue";
+
     export default {
         name: "Pokemon",
+        components: {
+            Card,
+            Form
+        },
         props: {
             title: String,
             msg: String
@@ -41,7 +51,7 @@
 
 <style scoped lang="scss">
     #wrapper {
-        background-color: #ffffce;
+        // background-color: #ffffce;
         color: #31639c;
     }
 </style>

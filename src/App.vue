@@ -14,14 +14,14 @@
 <script>
     import NavBar from "./components/NavBar.vue";
     // import CustomTitle from "./components/CustomTitle.vue";
-    import Pokemon from "./components/pages/Pokemon.vue";
+    import Pokemon from "./pages/Pokemon.vue";
 
     export default {
         name: "App",
         components: {
             NavBar,
             // CustomTitle,
-            Pokemon
+            Pokemon,
         },
         data() {
             return {
