@@ -4,7 +4,7 @@
         <NavBar />
 
         <!-- vue-component -> title -->
-        <CustomTitle />
+        <CustomTitle :title="titlePage" :msg="mainMsg" />
     </div>
 </template>
 
@@ -13,11 +13,18 @@
     import CustomTitle from "./components/CustomTitle.vue";
 
     export default {
-      name: "App",
-      components: {
-        NavBar,
-        CustomTitle
-      }
+        name: "App",
+        components: {
+            NavBar,
+            CustomTitle
+        },
+        data() {
+            return {
+                // var Custom title
+                titlePage: "Titolo della pagina",
+                mainMsg: "Ecco l'elenco dei Pokemon"
+            }
+        }
     };
 </script>
 
