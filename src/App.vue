@@ -1,17 +1,22 @@
 <template>
     <div id="app">
+        <!-- vue-component -> navbar -->
         <NavBar />
-        <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+
+        <!-- vue-component -> title -->
+        <CustomTitle />
     </div>
 </template>
 
 <script>
     import NavBar from "./components/NavBar.vue";
+    import CustomTitle from "./components/CustomTitle.vue";
 
     export default {
       name: "App",
       components: {
-        NavBar
+        NavBar,
+        CustomTitle
       }
     };
 </script>
