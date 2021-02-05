@@ -5,6 +5,11 @@
                 <div class="col-12">
                     <h1>{{ title }}</h1>
                     <p>{{ msg }}</p>
+                    <ul>
+                        <li v-for="(pokemon, index) in pokemons" :key="index">
+                            {{ pokemon.name }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -18,11 +23,17 @@
             title: String,
             msg: String
         },
+        data() {
+            return {
+                pokemons: [],
+            }
+        },
         mounted() {
-            // const thisComponent = this; // rename this component -> self
+            const thisComponent = this; // rename this component -> self
 
             this.axios.get(this.base_url + 'pokemon').then(response => {
-                console.log(response);
+                // console.log(response.data.results);
+                thisComponent.pokemons = response.data.results;
             });
         }
     }
