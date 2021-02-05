@@ -4,19 +4,24 @@
         <NavBar />
 
         <!-- vue-component -> title -->
-        <CustomTitle :title="titlePage" :msg="mainMsg" />
+        <!-- <CustomTitle :title="titlePage" :msg="mainMsg" /> -->
+
+        <!-- vue-component -> title -->
+        <Pokemon :title="titlePage" :msg="mainMsg" />
     </div>
 </template>
 
 <script>
     import NavBar from "./components/NavBar.vue";
-    import CustomTitle from "./components/CustomTitle.vue";
+    // import CustomTitle from "./components/CustomTitle.vue";
+    import Pokemon from "./components/pages/Pokemon.vue";
 
     export default {
         name: "App",
         components: {
             NavBar,
-            CustomTitle
+            // CustomTitle,
+            Pokemon
         },
         data() {
             return {
