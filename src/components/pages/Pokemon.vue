@@ -17,6 +17,13 @@
         props: {
             title: String,
             msg: String
+        },
+        mounted() {
+            // const thisComponent = this; // rename this component -> self
+
+            this.axios.get(this.base_url + 'pokemon').then(response => {
+                console.log(response);
+            });
         }
     }
 </script>
